@@ -18,6 +18,8 @@ def LaTeX2HTML(archivo):
     Returns:
         str: Tema extraído del archivo LaTeX.
     """
+    print(f"Convirtiendo archivo {archivo} a HTML.")
+    
     # Leer el contenido del archivo LaTeX
     with open(archivo, "r", encoding='utf8') as f:
         texto = f.read()
@@ -93,7 +95,8 @@ def postWordPress(html, tema, portada):
         portada (str): Ruta de la imagen de portada.
     """
     # Configuración de la API
-    api_url = os.getenv("API_URL")
+    api_url = os.getenv("WP_URL")
+    print("Publicando en:", api_url.replace("wp-json/wp/v2/posts", ""))
     api_url_media = api_url.replace("posts", "media")
     load_dotenv()
     usuario = os.getenv("USUARIO")
