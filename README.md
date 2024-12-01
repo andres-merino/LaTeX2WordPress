@@ -15,15 +15,13 @@
     <br />
     <a href="https://github.com/andres-merino/LaTeX2WordPress/issues">Reportar un Problema</a>
     <br />
-    <br />
-    En construcción
   </p>
 </div>
 
 <!-- Cuerpo -->
 ## Sobre el Proyecto
 
-**LaTeX2WordPress** es una herramienta diseñada para simplificar la publicación de documentos LaTeX como entradas en blogs de WordPress e Instagram de manera automática. Con este proyecto, se busca automatizar el proceso de conversión y publicación, facilitando el trabajo de quienes utilizan estas plataformas.
+**LaTeX2WordPress** es una herramienta diseñada para simplificar la publicación de documentos LaTeX como entradas en blogs de WordPress de manera automática. Con este proyecto, se busca automatizar el proceso de conversión y publicación, facilitando el trabajo de quienes utilizan estas plataformas.
 
 ### Construido con
 
@@ -33,11 +31,25 @@
 
 ## Descripción
 
-En construcción
+Existen dos maneras de utilizar **LaTeX2WordPress**:
 
-### Contenido del Repositorio
+Por línea de comandos usando el script `LaTeX2WordPress.py`: 
+```bash
+python LaTeX2WordPress.py <archivo.tex> <portada.jpeg>
+```
+Donde `<archivo.tex>` es el documento LaTeX que se desea convertir y `<portada.jpeg>` es la imagen de portada que se desea utilizar en la entrada de WordPress. Si se utilizan paquetes adicionales en el documento LaTeX, se deben colocar en la misma carpeta del script (como el paquete aleph-comandos.sty que se usa en el ejemplo).
 
-- En construcción  
+Por el archivo `LaTeX2WordPress.ipynb` en Jupyter Notebook: en este se tienen las siguientes funciones:
+  - `LaTeX2HTML`: convierte el documento LaTeX a HTML y devuelve el tema encontrado en `title`.
+  - `postWordPress`: publica el documento HTML en WordPress, tiene como argumentos el archivo HTML,el título del post y el nombre del archivo de la imagen de portada.
+
+En ambos casos, se debe tener un archivo `.env` con las siguientes variables de entorno:
+```bash
+WP_URL = 'https://tu.dominio/wp-json/wp/v2/posts'
+WP_USUARIO = "usuario"
+WP_CONTRASENIA = "***"
+```
+
 
 ## Créditos
 
