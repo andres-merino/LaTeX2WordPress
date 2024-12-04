@@ -95,10 +95,10 @@ def postWordPress(html, tema, portada):
         portada (str): Ruta de la imagen de portada.
     """
     # Configuración de la API
+    load_dotenv()
     api_url = os.getenv("WP_URL")
     print("Publicando en:", api_url.replace("wp-json/wp/v2/posts", ""))
     api_url_media = api_url.replace("posts", "media")
-    load_dotenv()
     usuario = os.getenv("WP_USUARIO")
     contraseña = os.getenv("WP_CONTRASENIA")
     auth = (usuario, contraseña)
